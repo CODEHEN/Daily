@@ -1,0 +1,72 @@
+[
+  {
+    "title": "控制台",
+    "href": "pages/console.html",
+    "fontFamily": "ok-icon",
+    "icon": "&#xe654;",
+    "spread": true,
+    "isCheck": true
+  },
+  {
+    "title": "人员管理",
+    "href": "",
+    "icon": "&#xe66f;",
+    "spread": false,
+    "children": [
+      {
+        "title": "学生列表",
+        "href": "pages/member/user.html",
+        "fontFamily": "layui-icon",
+        "icon": "&#xe62e;",
+        "spread": false
+      },
+      {
+        "title": "教师列表",
+        "href": "pages/member/role.html",
+        "icon": "&#xe62e;",
+        "spread": false
+      }
+    ]
+  },
+  {
+    "title": "查看",
+    "href": "",
+    "icon": "&#xe705;",
+    "spread": false,
+    "children": [
+      {
+        "title": "班级报告",
+        "href": "pages/often/message.html",
+        "icon": "&#xe62e;",
+        "spread": false
+      },
+      {
+        "title": "小组报告",
+        "href": "pages/often/message1.html",
+        "icon": "&#xe62e;",
+        "spread": false
+      }
+    ]
+  },
+  {
+    "title": "编辑",
+    "href": "",
+    "icon": "&#xe636;",
+    "spread": false,
+    "children": [
+      {
+        "title": "写日报",
+        "href": "pages/txtedit/edit.html",
+        "icon": "&#xe62e;",
+        "spread": false
+      },
+      {
+        "title": "写周报",
+        "href": "pages/txtedit/edit1.html",
+        "icon": "&#xe62e;",
+        "spread": false
+      }
+
+    ]
+  }
+]

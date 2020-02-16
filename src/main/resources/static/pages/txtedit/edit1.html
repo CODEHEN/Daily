@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>jQuery Contact Form Plugin: FFForm</title>
+    <link href="/css/demo.css" rel="stylesheet">
+    <script src="/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <!--Framework-->
+    <script src="/js/jquery-1.10.2.min.js"></script>
+    <script src="/js/jquery-ui.js"></script>
+    <!--End Framework-->
+
+</head>
+<body>
+    <section id="getintouch" class="fadeInRightBig animated">
+        <div class="container" style="border-bottom: 0;">
+            <h1>
+                <span>周报</span>
+            </h1>
+        </div>
+        <div class="container">
+            <form class="contact" id="form">
+            <div class="row clearfix">
+                <div class="lbl">
+                    <label for="workContent">
+                        工作内容</label>
+                </div>
+                <div class="ctrl">
+                    <textarea id="workContent" name="workContent" rows="6" cols="10" placeholder="工作内容"></textarea>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="lbl">
+                    <label for="difficulty">
+                        遇到的困难</label>
+                </div>
+                <div class="ctrl">
+                    <textarea id="difficulty" name="difficulty" rows="6" cols="10" placeholder="遇到的困难"></textarea>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="lbl">
+                    <label for="solution">
+                        解决办法</label>
+                </div>
+                <div class="ctrl">
+                    <textarea id="solution" name="solution" rows="6" cols="10" placeholder="解决办法"></textarea>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="lbl">
+                    <label for="experience">
+                        本周收获</label>
+                </div>
+                <div class="ctrl">
+                    <textarea id="experience" name="experience" rows="6" cols="10" placeholder="本周收获"></textarea>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="lbl">
+                    <label for="plan">
+                        下周计划</label>
+                </div>
+                <div class="ctrl">
+                    <textarea id="plan" name="plan" rows="6" cols="10"placeholder="下周计划"></textarea>
+                </div>
+            </div>
+
+            <div class="row  clearfix">
+                <div class="span10 offset2">
+                    <input type="button"  class="submit" value="提交周报" οnclick="upLoadData()">
+                </div>
+            </div>
+            </form>
+                <div id="success" style="display: none;color: #21cc71">
+                Your Report has been sent successfully!</div>
+                <div id="error" style="display: none;color: red">
+                    Unable to send Report at the moment, please try later.</div>
+
+         </div>
+
+    </section>
+
+    <script src="/lib/layui/layui.js"></script>
+<script type="text/javascript">
+    let okLayx = layui.okLayx;
+    $(".submit").click(function(){
+        var data = $("#form").serialize();
+        console.log(data);
+        $.ajax({
+            type: 'POST',
+            url: 'addReport/1',
+            data: data,
+            success: function (result) {
+                if (result == "0") {
+                    // okLayx.notice({
+                    //     title: "提交提示",
+                    //     type: "success",
+                    //     message: "提交成功"
+                    // });
+                    $("#success").css({display: 'block'});
+                }
+
+            }, error: function () {
+                // okLayx.notice({
+                //     title: "错误提示",
+                //     type: "error",
+                //     message: "我是消息提示消息提示消息提示消息提示"
+                // });
+                $("#error").css({display: 'block'});
+            }
+        })
+    })
+</script>
+</body>
+</html>
