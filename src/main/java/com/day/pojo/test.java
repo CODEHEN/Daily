@@ -9,4 +9,5 @@ package com.day.pojo;
 public class test {
     private String id;
     private int ss;
+    private int a;
 }
